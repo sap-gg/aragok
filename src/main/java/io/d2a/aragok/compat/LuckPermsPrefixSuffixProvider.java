@@ -4,13 +4,7 @@ import net.luckperms.api.LuckPerms;
 import net.luckperms.api.cacheddata.CachedMetaData;
 import org.bukkit.entity.Player;
 
-public class LuckPermsPrefixSuffixProvider implements PrefixSuffixProvider {
-
-    private final LuckPerms luckPerms;
-
-    public LuckPermsPrefixSuffixProvider(final LuckPerms luckPerms) {
-        this.luckPerms = luckPerms;
-    }
+public record LuckPermsPrefixSuffixProvider(LuckPerms luckPerms) implements PrefixSuffixProvider {
 
     private CachedMetaData getMeta(final Player player) {
         return this.luckPerms.getPlayerAdapter(Player.class).getMetaData(player);

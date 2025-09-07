@@ -8,7 +8,6 @@ import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import io.papermc.paper.command.brigadier.argument.ArgumentTypes;
 import io.papermc.paper.command.brigadier.argument.resolvers.selector.PlayerSelectorArgumentResolver;
-import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.Node;
@@ -132,7 +131,7 @@ public record PrivilegesCommand(LuckPerms luckPerms) {
         }
     }
 
-    public LiteralCommandNode<CommandSourceStack> build(final ComponentLogger logger) {
+    public LiteralCommandNode<CommandSourceStack> build() {
         final LiteralArgumentBuilder<CommandSourceStack> root = Commands.literal("privileges")
                 .requires(Commands.restricted(source ->
                         source.getSender().hasPermission(USE_PERMISSION)));

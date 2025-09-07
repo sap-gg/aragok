@@ -35,8 +35,7 @@ public final class Aragok extends JavaPlugin {
 
         this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, commands -> {
             this.getLogger().info("Registering aragok commands...");
-            commands.registrar().register(new PrivilegesCommand(luckPerms)
-                    .build(this.getComponentLogger()), "Gain Admin Privileges");
+            commands.registrar().register(new PrivilegesCommand(luckPerms).build(), "Gain Admin Privileges");
         });
 
         // listen to LuckPerms user/meta changes

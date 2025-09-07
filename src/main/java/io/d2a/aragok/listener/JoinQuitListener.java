@@ -6,13 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class JoinQuitListener implements Listener {
-
-    private final NametagService nametagService;
-
-    public JoinQuitListener(final NametagService nametagService) {
-        this.nametagService = nametagService;
-    }
+public record JoinQuitListener(NametagService nametagService) implements Listener {
 
     @EventHandler
     public void onJoin(final PlayerJoinEvent event) {

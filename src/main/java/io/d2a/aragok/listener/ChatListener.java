@@ -11,9 +11,7 @@ import org.bukkit.event.Listener;
  * Listens to chat events and modifies the chat format by adding prefixes and suffixes
  * to player messages based on their permissions or roles.
  */
-public record ChatListener(
-        PrefixSuffixProvider prefixSuffixProvider
-) implements Listener {
+public record ChatListener(PrefixSuffixProvider prefixSuffixProvider) implements Listener {
 
     @EventHandler
     public void onChat(final AsyncChatEvent event) {
@@ -25,7 +23,7 @@ public record ChatListener(
         event.renderer((source, displayName, message, viewer) ->
                 Component.empty()
                         .append(prefix)
-                        .append(displayName)
+                        .append(displayName.style(s -> s.colorIfAbsent(prefix.color())))
                         .append(suffix)
                         .append(Component.text(": "))
                         .append(message)

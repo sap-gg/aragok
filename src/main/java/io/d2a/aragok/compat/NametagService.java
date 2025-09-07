@@ -1,8 +1,12 @@
 package io.d2a.aragok.compat;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,8 +43,16 @@ public class NametagService {
             team = this.mainScoreboard.registerNewTeam(teamName);
         }
 
-        team.prefix(this.prefixSuffixProvider.prefixComponent(player));
+        final Component prefix = this.prefixSuffixProvider.prefixComponent(player);
+        team.prefix(prefix);
         team.suffix(this.prefixSuffixProvider.suffixComponent(player));
+
+        final @Nullable TextColor prefixColor = prefix.color();
+        if (prefixColor != null) {
+            team.color(NamedTextColor.nearestTo(prefixColor));
+        } else {
+            team.color(null);
+        }
 
         if (!team.hasEntity(player)) {
             team.addEntity(player);
