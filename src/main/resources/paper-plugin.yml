@@ -1,6 +1,7 @@
 name: aragok
 version: '1.0-SNAPSHOT'
 main: io.d2a.aragok.Aragok
+bootstrapper: io.d2a.aragok.AragokBootstrap
 authors:
   - d2aniel
 api-version: '1.21'

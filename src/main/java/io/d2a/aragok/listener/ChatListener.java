@@ -1,5 +1,6 @@
-package io.d2a.aragok;
+package io.d2a.aragok.listener;
 
+import io.d2a.aragok.compat.PrefixSuffixProvider;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;

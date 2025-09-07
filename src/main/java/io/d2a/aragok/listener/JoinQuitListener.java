@@ -1,5 +1,6 @@
-package io.d2a.aragok;
+package io.d2a.aragok.listener;
 
+import io.d2a.aragok.compat.NametagService;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;

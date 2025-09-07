@@ -1,4 +1,4 @@
-package io.d2a.aragok;
+package io.d2a.aragok.compat;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;

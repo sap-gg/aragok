@@ -1,4 +1,4 @@
-package io.d2a.aragok;
+package io.d2a.aragok.compat;
 
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.cacheddata.CachedMetaData;

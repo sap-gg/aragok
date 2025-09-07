@@ -1,4 +1,4 @@
-package io.d2a.aragok;
+package io.d2a.aragok.compat;
 
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
