@@ -1,0 +1,11 @@
+name: aragok
+version: '1.0-SNAPSHOT'
+main: io.d2a.aragok.Aragok
+authors:
+  - d2aniel
+api-version: '1.21'
+dependencies:
+  server:
+    LuckPerms:
+      load: BEFORE
+      required: true
